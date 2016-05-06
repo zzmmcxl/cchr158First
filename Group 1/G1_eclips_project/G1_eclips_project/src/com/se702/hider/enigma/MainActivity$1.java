@@ -16,7 +16,7 @@ class MainActivity$1 extends BroadcastReceiver {
     }
     
     public void onReceive(final Context context, final Intent intent) {
-        ((EditText)this$0.findViewById(editText)).setText((CharSequence)intent.getExtras().getString("output"));
-        ((ImageView)this$0.findViewById(imageDisplay)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
+        ((EditText)this$0.findViewById(R.id.editText)).setText((CharSequence)intent.getExtras().getString("output"));
+        ((ImageView)this$0.findViewById(R.id.imageDisplay)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
     }
 }
