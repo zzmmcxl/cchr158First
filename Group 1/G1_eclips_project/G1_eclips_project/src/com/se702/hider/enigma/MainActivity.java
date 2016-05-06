@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity
             }
             
             public void onReceive(final Context context, final Intent intent) {
-                ((EditText)this$0.findViewById(2131492973)).setText((CharSequence)intent.getExtras().getString("output"));
-                ((ImageView)this$0.findViewById(2131492980)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
+                ((EditText)this$0.findViewById(R.id.editText)).setText((CharSequence)intent.getExtras().getString("output"));
+                ((ImageView)this$0.findViewById(R.id.imageDisplay)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
             }
         };
     }
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity
             final Uri data = intent.getData();
             if (n == 1) {
                 final Intent intent2 = new Intent("android.intent.action.SYNC", (Uri)null, (Context)this, (Class)EncoderService.class);
-                final String string = ((EditText)this.findViewById(2131492974)).getText().toString();
+                final String string = ((EditText)this.findViewById(R.id.edit_message)).getText().toString();
                 intent2.putExtra("imageURI", data.toString());
                 intent2.putExtra("message", string);
                 this.startService(intent2);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
-        this.setContentView(2130968628);
+        this.setContentView(R.layout.splash);
         new Handler().postDelayed((Runnable)new Runnable() {
             final /* synthetic */ MainActivity this$0;
             
@@ -81,19 +81,19 @@ public class MainActivity extends AppCompatActivity
             
             @Override
             public void run() {
-                this$0.setContentView(2130968602);
-                this$0.setSupportActionBar((Toolbar)this$0.findViewById(2131492969));
+                this$0.setContentView(R.layout.activity_my);
+                this$0.setSupportActionBar((Toolbar)this$0.findViewById(R.id.toolbar));
             }
         }, (long)5000);
     }
     
     public boolean onCreateOptionsMenu(final Menu menu) {
-        this.getMenuInflater().inflate(2131558400, menu);
+        this.getMenuInflater().inflate(R.menu.menu_my, menu);
         return true;
     }
     
     public boolean onOptionsItemSelected(final MenuItem menuItem) {
-        return menuItem.getItemId() == 2131493003 || super.onOptionsItemSelected(menuItem);
+        return menuItem.getItemId() == R.id.action_settings || super.onOptionsItemSelected(menuItem);
     }
     
     @Override

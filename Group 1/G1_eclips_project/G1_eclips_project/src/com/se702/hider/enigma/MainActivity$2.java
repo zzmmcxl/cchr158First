@@ -12,7 +12,7 @@ class MainActivity$2 implements Runnable {
     
     @Override
     public void run() {
-        this$0.setContentView(2130968602);
-        this$0.setSupportActionBar((Toolbar)this$0.findViewById(2131492969));
+        this$0.setContentView(R.layout.activity_my);
+        this$0.setSupportActionBar((Toolbar)this$0.findViewById(R.id.toolbar));
     }
 }
