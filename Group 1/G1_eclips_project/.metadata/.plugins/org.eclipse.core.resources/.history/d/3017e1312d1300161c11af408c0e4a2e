@@ -1,0 +1,15 @@
+package com.se702.hider.enigma;
+
+import android.graphics.Bitmap;
+
+public class lllIlIlIll
+{
+    public lllIlIlIll() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final Bitmap bitmap) {
+        deencoderService.$23 = bitmap.getPixel(deencoderService.$431.x, deencoderService.$431.y);
+        $44.l(deencoderService, bitmap);
+    }
+}

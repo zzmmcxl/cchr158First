@@ -1,0 +1,19 @@
+package com.se702.hider.enigma;
+
+import java.io.ObjectInputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import android.graphics.Bitmap;
+
+public class $8
+{
+    public $8() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final Bitmap bitmap) {
+        deencoderService.$22.setLength(0);
+        llIlllIlll.l(deencoderService, bitmap);
+    }
+}

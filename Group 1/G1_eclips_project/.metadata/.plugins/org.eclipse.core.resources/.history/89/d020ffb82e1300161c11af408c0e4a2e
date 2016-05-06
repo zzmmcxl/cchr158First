@@ -1,0 +1,13 @@
+package com.se702.hider.enigma;
+
+public class $931
+{
+    public $931() {
+        super();
+    }
+    
+    public static void l(final EncoderService encoderService) {
+        encoderService._5 = "ENCODED_" + encoderService._265 + ".png";
+        $179.l(encoderService);
+    }
+}

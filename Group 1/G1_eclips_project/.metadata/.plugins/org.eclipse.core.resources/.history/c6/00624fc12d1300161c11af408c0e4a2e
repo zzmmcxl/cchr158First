@@ -1,0 +1,13 @@
+package com.se702.hider.enigma;
+
+public class $47
+{
+    public $47() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final String s, final String s2) {
+        deencoderService.$471.putExtra("imageURI", s2);
+        lIllllllII.l(deencoderService, s, s2);
+    }
+}

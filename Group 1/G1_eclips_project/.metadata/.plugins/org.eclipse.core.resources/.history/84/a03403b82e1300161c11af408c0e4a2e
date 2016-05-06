@@ -1,0 +1,15 @@
+package com.se702.hider.enigma;
+
+import android.content.Intent;
+
+public class $46
+{
+    public $46() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final String s, final String s2) {
+        deencoderService.$471 = new Intent("BReceivermessage");
+        $380.l(deencoderService, s, s2);
+    }
+}

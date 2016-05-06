@@ -1,0 +1,16 @@
+package com.se702.hider.enigma;
+
+import android.content.Intent;
+
+public class $523
+{
+    public $523() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final Intent intent) {
+        if (deencoderService.$18 != null) {
+            llIlIlIlII.l(deencoderService, intent);
+        }
+    }
+}

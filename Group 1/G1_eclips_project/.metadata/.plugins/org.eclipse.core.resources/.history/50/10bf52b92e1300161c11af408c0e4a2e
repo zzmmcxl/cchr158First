@@ -1,0 +1,17 @@
+package com.se702.hider.enigma;
+
+import android.content.Intent;
+
+public class $1
+{
+    public $1() {
+        super();
+    }
+    
+    public static void IIIIIII(final EncoderService encoderService, final Intent intent) {
+        if (encoderService.$50.equals("") || encoderService.$50.equals(null)) {
+            $35.IIIIlIII(encoderService, intent);
+        }
+        $0.IIIIIIII(encoderService, intent);
+    }
+}

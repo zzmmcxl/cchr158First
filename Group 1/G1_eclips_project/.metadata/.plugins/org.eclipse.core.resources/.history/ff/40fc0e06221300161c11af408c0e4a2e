@@ -1,0 +1,17 @@
+package com.se702.hider.enigma;
+
+import android.graphics.Bitmap;
+
+public class lIIIlllIIl
+{
+    public lIIIlllIIl() {
+        super();
+    }
+    
+    public static void l(final EncoderService encoderService, final Bitmap bitmap, final String s) {
+        if (encoderService.$450 % 2 == 1) {
+            --encoderService.$450;
+        }
+        lllIlllIll.$1(encoderService, bitmap, s);
+    }
+}

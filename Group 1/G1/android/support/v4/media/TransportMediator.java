@@ -1,0 +1,263 @@
+package android.support.v4.media;
+
+import android.os.Build$VERSION;
+import android.support.v4.view.KeyEventCompat;
+import android.view.KeyEvent;
+import android.app.Activity;
+import android.view.View;
+import java.util.ArrayList;
+import android.view.KeyEvent$Callback;
+import android.content.Context;
+import android.media.AudioManager;
+
+public class TransportMediator extends TransportController
+{
+    public static final int FLAG_KEY_MEDIA_FAST_FORWARD = 64;
+    public static final int FLAG_KEY_MEDIA_NEXT = 128;
+    public static final int FLAG_KEY_MEDIA_PAUSE = 16;
+    public static final int FLAG_KEY_MEDIA_PLAY = 4;
+    public static final int FLAG_KEY_MEDIA_PLAY_PAUSE = 8;
+    public static final int FLAG_KEY_MEDIA_PREVIOUS = 1;
+    public static final int FLAG_KEY_MEDIA_REWIND = 2;
+    public static final int FLAG_KEY_MEDIA_STOP = 32;
+    public static final int KEYCODE_MEDIA_PAUSE = 127;
+    public static final int KEYCODE_MEDIA_PLAY = 126;
+    public static final int KEYCODE_MEDIA_RECORD = 130;
+    final AudioManager mAudioManager;
+    final TransportPerformer mCallbacks;
+    final Context mContext;
+    final TransportMediatorJellybeanMR2 mController;
+    final Object mDispatcherState;
+    final KeyEvent$Callback mKeyEventCallback;
+    final ArrayList<TransportStateListener> mListeners;
+    final TransportMediatorCallback mTransportKeyCallback;
+    final View mView;
+    
+    public TransportMediator(final Activity activity, final TransportPerformer transportPerformer) {
+        this(activity, null, transportPerformer);
+    }
+    
+    private TransportMediator(final Activity activity, View decorView, final TransportPerformer mCallbacks) {
+        super();
+        mListeners = new ArrayList<TransportStateListener>();
+        mTransportKeyCallback = new TransportMediatorCallback() {
+            final /* synthetic */ TransportMediator this$0;
+            
+            TransportMediator$1() {
+                this$0 = this$0;
+                super();
+            }
+            
+            @Override
+            public long getPlaybackPosition() {
+                return mCallbacks.onGetCurrentPosition();
+            }
+            
+            @Override
+            public void handleAudioFocusChange(final int n) {
+                mCallbacks.onAudioFocusChange(n);
+            }
+            
+            @Override
+            public void handleKey(final KeyEvent keyEvent) {
+                keyEvent.dispatch(mKeyEventCallback);
+            }
+            
+            @Override
+            public void playbackPositionUpdate(final long n) {
+                mCallbacks.onSeekTo(n);
+            }
+        };
+        mKeyEventCallback = (KeyEvent$Callback)new KeyEvent$Callback() {
+            final /* synthetic */ TransportMediator this$0;
+            
+            TransportMediator$2() {
+                this$0 = this$0;
+                super();
+            }
+            
+            public boolean onKeyDown(final int n, final KeyEvent keyEvent) {
+                return TransportMediator.isMediaKey(n) && mCallbacks.onMediaButtonDown(n, keyEvent);
+            }
+            
+            public boolean onKeyLongPress(final int n, final KeyEvent keyEvent) {
+                return false;
+            }
+            
+            public boolean onKeyMultiple(final int n, final int n2, final KeyEvent keyEvent) {
+                return false;
+            }
+            
+            public boolean onKeyUp(final int n, final KeyEvent keyEvent) {
+                return TransportMediator.isMediaKey(n) && mCallbacks.onMediaButtonUp(n, keyEvent);
+            }
+        };
+        Object context;
+        if (activity != null) {
+            context = activity;
+        }
+        else {
+            context = decorView.getContext();
+        }
+        mContext = (Context)context;
+        mCallbacks = mCallbacks;
+        mAudioManager = (AudioManager)mContext.getSystemService("audio");
+        if (activity != null) {
+            decorView = activity.getWindow().getDecorView();
+        }
+        mView = decorView;
+        mDispatcherState = KeyEventCompat.getKeyDispatcherState(mView);
+        if (Build$VERSION.SDK_INT >= 18) {
+            mController = new TransportMediatorJellybeanMR2(mContext, mAudioManager, mView, mTransportKeyCallback);
+            return;
+        }
+        mController = null;
+    }
+    
+    public TransportMediator(final View view, final TransportPerformer transportPerformer) {
+        this(null, view, transportPerformer);
+    }
+    
+    private TransportStateListener[] getListeners() {
+        if (mListeners.size() <= 0) {
+            return null;
+        }
+        final TransportStateListener[] array = new TransportStateListener[mListeners.size()];
+        mListeners.<TransportStateListener>toArray(array);
+        return array;
+    }
+    
+    static boolean isMediaKey(final int n) {
+        switch (n) {
+            default:
+                return false;
+            case 79:
+            case 85:
+            case 86:
+            case 87:
+            case 88:
+            case 89:
+            case 90:
+            case 91:
+            case 126:
+            case 127:
+            case 130:
+                return true;
+        }
+    }
+    
+    private void pushControllerState() {
+        if (mController != null) {
+            mController.refreshState(mCallbacks.onIsPlaying(), mCallbacks.onGetCurrentPosition(), mCallbacks.onGetTransportControlFlags());
+        }
+    }
+    
+    private void reportPlayingChanged() {
+        final TransportStateListener[] listeners = this.getListeners();
+        if (listeners != null) {
+            for (int length = listeners.length, i = 0; i < length; ++i) {
+                listeners[i].onPlayingChanged(this);
+            }
+        }
+    }
+    
+    private void reportTransportControlsChanged() {
+        final TransportStateListener[] listeners = this.getListeners();
+        if (listeners != null) {
+            for (int length = listeners.length, i = 0; i < length; ++i) {
+                listeners[i].onTransportControlsChanged(this);
+            }
+        }
+    }
+    
+    public void destroy() {
+        mController.destroy();
+    }
+    
+    public boolean dispatchKeyEvent(final KeyEvent keyEvent) {
+        return KeyEventCompat.dispatch(keyEvent, mKeyEventCallback, mDispatcherState, this);
+    }
+    
+    @Override
+    public int getBufferPercentage() {
+        return mCallbacks.onGetBufferPercentage();
+    }
+    
+    @Override
+    public long getCurrentPosition() {
+        return mCallbacks.onGetCurrentPosition();
+    }
+    
+    @Override
+    public long getDuration() {
+        return mCallbacks.onGetDuration();
+    }
+    
+    public Object getRemoteControlClient() {
+        if (mController != null) {
+            return mController.getRemoteControlClient();
+        }
+        return null;
+    }
+    
+    @Override
+    public int getTransportControlFlags() {
+        return mCallbacks.onGetTransportControlFlags();
+    }
+    
+    @Override
+    public boolean isPlaying() {
+        return mCallbacks.onIsPlaying();
+    }
+    
+    @Override
+    public void pausePlaying() {
+        if (mController != null) {
+            mController.pausePlaying();
+        }
+        mCallbacks.onPause();
+        this.pushControllerState();
+        this.reportPlayingChanged();
+    }
+    
+    public void refreshState() {
+        this.pushControllerState();
+        this.reportPlayingChanged();
+        this.reportTransportControlsChanged();
+    }
+    
+    @Override
+    public void registerStateListener(final TransportStateListener transportStateListener) {
+        mListeners.add(transportStateListener);
+    }
+    
+    @Override
+    public void seekTo(final long n) {
+        mCallbacks.onSeekTo(n);
+    }
+    
+    @Override
+    public void startPlaying() {
+        if (mController != null) {
+            mController.startPlaying();
+        }
+        mCallbacks.onStart();
+        this.pushControllerState();
+        this.reportPlayingChanged();
+    }
+    
+    @Override
+    public void stopPlaying() {
+        if (mController != null) {
+            mController.stopPlaying();
+        }
+        mCallbacks.onStop();
+        this.pushControllerState();
+        this.reportPlayingChanged();
+    }
+    
+    @Override
+    public void unregisterStateListener(final TransportStateListener transportStateListener) {
+        mListeners.remove(transportStateListener);
+    }
+}

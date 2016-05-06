@@ -1,0 +1,36 @@
+package com.se702.hider.enigma;
+
+import java.util.Random;
+import android.graphics.Point;
+import java.util.ArrayList;
+
+class RandomPointGenerator
+{
+    private int $46;
+    private ArrayList<Point> $189;
+    private Random $271;
+    private int $419;
+    
+    public RandomPointGenerator(final int iiIlIlllI, final int llIlIIIll) {
+        super();
+        $46 = iiIlIlllI;
+        llIlIIIll = llIlIIIll;
+        $271 = new Random(this.getRandomSeedFromDimensions());
+        $189 = new ArrayList<Point>();
+    }
+    
+    private Point getRandomPoint() {
+        return new Point($271.nextInt($419), $271.nextInt($46));
+    }
+    
+    private int getRandomSeedFromDimensions() {
+        return $46 * $419;
+    }
+    
+    public Point getNextRandomPoint() {
+        Point point;
+        for (point = this.getRandomPoint(); $189.contains(point); point = this.getRandomPoint()) {}
+        $189.add(point);
+        return point;
+    }
+}

@@ -1,0 +1,97 @@
+package com.se702.hider.enigma;
+
+import android.content.Intent;
+import android.net.Uri;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import android.graphics.Point;
+import java.io.File;
+import android.graphics.Bitmap;
+import android.app.IntentService;
+
+public class EncoderService extends IntentService {
+	public Bitmap $0;
+	public String $5;
+	public char $16;
+	public String $50;
+	public RandomPointGenerator $73;
+	public StringBuilder $97;
+	public File $131;
+	public char $140;
+	public String $265;
+	public int $279;
+	public File $288;
+	public int $292;
+	public Point $301;
+	public Bitmap $304;
+	public File $312;
+	public OutputStream $341;
+	public Uri $388;
+	public int $450;
+	public Intent $474;
+	public int $481;
+	public int $496;
+	public Uri $502;
+	public String $510;
+
+	public EncoderService() {
+		super(EncoderService.class.getName());
+		$16 = "\u0002\u0002".charAt(0);
+		$140 = "\u0003\t".charAt(0);
+	}
+
+	private char getCharForBits(final String s) {
+		return (char) Integer.parseInt(s, 2);
+	}
+
+	public String getBitsForPos(final String s, final int n) {
+		this.$97 = new StringBuilder(Integer.toBinaryString(s.charAt(n)));
+		while (this.$97.length() < 16) {
+			this.$97.insert(0, "0");
+		}
+		return $97.toString();
+	}
+
+	public File getFileDestination() {
+		this.$131 = new File(Environment.getExternalStorageDirectory() + "/DCIM/Encoder");
+		if (!$131.exists() && !$131.mkdirs()) {
+			return null;
+		}
+		this.$265 = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
+		this.$5 = "ENCODED_" + this.$265 + ".png";
+		this.$288 = new File(this.$131.getPath() + File.separator + this.$5);
+		return $288;
+	}
+
+	public void hideText(final Bitmap bitmap, final String s) {
+		this.$73 = new RandomPointGenerator(bitmap.getHeight(), bitmap.getWidth());
+		this.$279 = 0;
+		this.$496 = 0;
+		this.$510 = "";
+		while (this.$496 != this.$510.length() || this.$279 != s.length()) {
+			this.$301 = this.$73.getNextRandomPoint();
+			if (this.$496 == this.$510.length()) {
+				this.$510 = this.getBitsForPos(s, this.$279);
+				this.$496 = 0;
+				$910.$1(this, bitmap, s);
+			}
+			this.$481 = Integer.parseInt(this.$510.substring(this.$496, 1 + this.$496));
+			++this.$496;
+			this.$292 = bitmap.getPixel(this.$301.x, this.$301.y);
+			this.$450 = Color.red(this.$292);
+			if (this.$450 % 2 == 1) {
+				--this.$450;
+			}
+			this.$450 += this.$481;
+			bitmap.setPixel(encoderService.$301.x, encoderService.$301.y, Color.argb(Color.alpha(encoderService.$292),
+					encoderService.$450, Color.green(encoderService.$292), Color.blue(encoderService.$292)));
+		}
+		IIlIIlllII.$1(this, bitmap, s);
+	}
+
+	protected void onHandleIntent(final Intent intent) {
+		llllllllll.I(this, intent);
+	}
+}

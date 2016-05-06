@@ -1,0 +1,14 @@
+package com.se702.hider.enigma;
+
+import java.io.File;
+
+public class $179
+{
+    public $179() {
+        super();
+    }
+    
+    public static void l(final EncoderService encoderService) {
+        encoderService.$288 = new File(encoderService.file.getPath() + File.separator + encoderService._5);
+    }
+}

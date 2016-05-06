@@ -1,0 +1,15 @@
+package com.se702.hider.enigma;
+
+import android.graphics.Bitmap;
+
+public class $776
+{
+    public $776() {
+        super();
+    }
+    
+    public static void ll(final EncoderService encoderService, final Bitmap bitmap, final String s) {
+        encoderService.$73 = new RandomPointGenerator(bitmap.getHeight(), bitmap.getWidth());
+        lllllIIIll.lll(encoderService, bitmap, s);
+    }
+}

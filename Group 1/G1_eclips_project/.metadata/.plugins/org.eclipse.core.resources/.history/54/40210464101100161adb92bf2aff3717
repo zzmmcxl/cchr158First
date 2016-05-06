@@ -1,0 +1,18 @@
+package com.se702.hider.enigma;
+
+import android.graphics.Bitmap;
+
+public class llllllIIIl
+{
+    public llllllIIIl() {
+        super();
+    }
+    
+    public static void llllll(final EncoderService encoderService, final Bitmap bitmap, final String s) {
+        while (encoderService.lllllIIII != encoderService.llllllllI.length() || encoderService.$279 != s.length()) {
+            encoderService.lIIlIllIl = encoderService.$73.getNextRandomPoint();
+            lllllllIII.lllllll(encoderService, bitmap, s);
+        }
+        IIlIIlllII.l(encoderService, bitmap, s);
+    }
+}

@@ -1,0 +1,13 @@
+package com.se702.hider.enigma;
+
+public class $107
+{
+    public $107() {
+        super();
+    }
+    
+    public static void l(final EncoderService encoderService, final String s, final int n) {
+        encoderService.$97 = new StringBuilder(Integer.toBinaryString(s.charAt(n)));
+        lllllIIIlI.l(encoderService, s, n);
+    }
+}

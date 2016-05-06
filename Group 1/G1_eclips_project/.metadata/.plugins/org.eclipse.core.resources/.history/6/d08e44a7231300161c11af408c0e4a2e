@@ -1,0 +1,15 @@
+package com.se702.hider.enigma;
+
+import android.content.Intent;
+
+public class $12
+{
+    public $12() {
+        super();
+    }
+    
+    public static void IIIIII(final EncoderService encoderService, final Intent intent) {
+        encoderService.$50 = intent.getStringExtra("message");
+        IIIIIIIIIl.IIIIIII(encoderService, intent);
+    }
+}

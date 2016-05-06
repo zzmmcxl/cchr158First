@@ -1,0 +1,12 @@
+package com.se702.hider.enigma;
+
+public class $672
+{
+    public $672() {
+        super();
+    }
+    
+    public static void l(final EncoderService encoderService, final String s, final int n) {
+        
+    }
+}

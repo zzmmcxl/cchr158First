@@ -1,0 +1,18 @@
+package com.se702.hider.enigma;
+
+import android.provider.MediaStore$Images$Media;
+import android.content.Intent;
+
+public class $109
+{
+    public $109() {
+        super();
+    }
+    
+    public static void III(final EncoderService encoderService, final Intent intent) {
+        try {
+            encoderService.$304 = MediaStore$Images$Media.getBitmap(encoderService.getContentResolver(), encoderService.$388);
+        }
+        catch (Exception ex) {}
+    }
+}

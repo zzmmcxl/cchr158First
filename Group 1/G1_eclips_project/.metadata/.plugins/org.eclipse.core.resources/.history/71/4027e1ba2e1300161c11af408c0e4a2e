@@ -1,0 +1,21 @@
+package com.se702.hider.enigma;
+
+import android.graphics.Color;
+import android.graphics.Bitmap;
+
+public class $44
+{
+    public $44() {
+        super();
+    }
+    
+    public static void l(final DeencoderService deencoderService, final Bitmap bitmap) {
+        if (Color.red(deencoderService.$23) % 2 == 0) {
+            $259.l(deencoderService, bitmap);
+        }
+        else {
+            $976.l(deencoderService, bitmap);
+        }
+        $521.l(deencoderService, bitmap);
+    }
+}

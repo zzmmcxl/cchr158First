@@ -1,0 +1,16 @@
+package com.se702.hider.enigma;
+
+import android.net.Uri;
+import android.content.Intent;
+
+public class $255
+{
+    public $255() {
+        super();
+    }
+    
+    public static void II(final EncoderService encoderService, final Intent intent) {
+        encoderService.$388 = Uri.parse(intent.getStringExtra("imageURI"));
+        $109.III(encoderService, intent);
+    }
+}
