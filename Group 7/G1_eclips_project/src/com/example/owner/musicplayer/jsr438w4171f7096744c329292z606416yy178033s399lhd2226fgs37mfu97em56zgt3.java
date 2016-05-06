@@ -23,12 +23,11 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   private List<File> songList;
   private int trakeNumber;
   private MediaPlayer player;
-  private final IBinder yjl3u59m97wn98eajx984015tk23pv64vu864581y60l51wbi58f702929m47u93v706746 = new bkv3523rqvc154051z146pqz54l34q38ujcx6211au2959i6368gdes982958eze95952();
+  private final IBinder binder = new bkv3523rqvc154051z146pqz54l34q38ujcx6211au2959i6368gdes982958eze95952();
   private File song;
   
-  public int bbz59q96q113916i24g9lw8348hc481395381666d82jl5164dv71q15b47z53j565267qos37()
+  public int getPosition()
   {
-    Log.i("tjfsmfinlkoaotgsvqfi", "ojwcqdhbncsrylmzrcjw");
     return this.player.getCurrentPosition();
   }
   
@@ -38,14 +37,13 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
     this.player.release();
     this.trakeNumber = ((this.trakeNumber + 1) % this.songList.size());
     this.song = ((File)this.songList.get(this.trakeNumber));
-    this.player = MediaPlayer.create(getApplicationContext(), sfk90j61f13471l17ew4evz3479e83kp20y9312cl67viln66537wz4340l28dz5g28(this.song));
+    this.player = MediaPlayer.create(getApplicationContext(), setSongAndGetItsURI(this.song));
     this.player.start();
   }
   
   public Bitmap dhwxafp5426051t98dz47zpz4747025bn25uf93m56a1tqd033pxfhq18d62nl34(Uri paramUri, byte[] paramArrayOfByte)
   {
     paramArrayOfByte = new FFmpegMediaMetadataRetriever();
-    Log.d("urckimawyijnhusmlpwm", "capmuhlcultrzccnefge");
     paramArrayOfByte.setDataSource(paramUri.toString());
     paramUri = paramArrayOfByte.getEmbeddedPicture();
     if (paramUri != null) {
@@ -56,8 +54,6 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   
   public boolean eqd5820wr18sfa694n94cw9517de22lj4627ug513mq647818192d2163xnk79817670s30()
   {
-    Log.e("butpshadozynpbfroqve", "fvbxbiomqoxbmftzfhzu");
-    Log.v("ejvdhblmmjigcaximonn", "epcdwsibtsetngqpjcwg");
     if (this.player.getCurrentPosition() + 5000 < this.player.getDuration())
     {
       this.player.seekTo(this.player.getCurrentPosition() + 5000);
@@ -69,11 +65,7 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   
   public void fixyf782463o39jmz87454440r97h4169caw57v21k534374y2499cox0ple81t44591840()
   {
-    Log.i("mggqljwymiykobapejzh", "suzcvhffgtznfdbtvtig");
-    Log.d("awcdbwrfckoknqsquqom", "fjwrejuddwdpzjzsjblx");
-    Log.i("aqtdtnkjrrbkiqocozuh", "nlswshxhgfmfsvjpqzap");
-    this.player = MediaPlayer.create(getApplicationContext(), sfk90j61f13471l17ew4evz3479e83kp20y9312cl67viln66537wz4340l28dz5g28((File)this.songList.get(this.trakeNumber)));
-    Log.v("mfrsafnrpauhrvysfink", "oiodxcvduekpgzedsvkd");
+    this.player = MediaPlayer.create(getApplicationContext(), setSongAndGetItsURI((File)this.songList.get(this.trakeNumber)));
     this.player.start();
   }
   
@@ -116,7 +108,7 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   
   public IBinder onBind(Intent paramIntent)
   {
-    return this.yjl3u59m97wn98eajx984015tk23pv64vu864581y60l51wbi58f702929m47u93v706746;
+    return this.binder;
   }
   
   public void onCreate()
@@ -136,12 +128,7 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   
   public void onPrepared(MediaPlayer paramMediaPlayer) {}
   
-  public void pceurfsckxyibiilqrdw()
-  {
-    Log.e("tpfbfucnssleyrriizqk", "ttappedhcivofcspkozm");
-    Log.i("amerlavkarctberhziwy", "abqelvwqhbidpbotrzlv");
-  }
-  
+   
   public void qmkx6f46qlu54477718a2g51e6321yk7925351d99eutybwmwjyu36s9x75pv1741(int paramInt)
   {
     this.player.seekTo(paramInt);
@@ -159,7 +146,7 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
     }
   }
   
-  public Uri sfk90j61f13471l17ew4evz3479e83kp20y9312cl67viln66537wz4340l28dz5g28(File paramFile)
+  public Uri setSongAndGetItsURI(File paramFile)
   {
     this.song = paramFile;
     return Uri.parse(this.song.toString());
@@ -173,21 +160,12 @@ public class jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56z
   public void wuli14h3032iow62sl5250h8301873sqm5576567261981932pe3248q2c75201815599645804132()
   {
     this.player.stop();
-//    Log.i("qtexskrztvutdqjvkeyx", "knfxzqgkonypzvkhvigc");
-//    Log.e("elofxmrcxikibcbrnjdx", "vcaxyivxwbmvuloymgzz");
     this.player.release();
-    //if (this.fsx11wsr797753d92i5886ask9833rb1089398h74k34z31d8421e7e14q22161243qqcx44 - 1 < 0) {}
     for (int i = this.songList.size() - 1;; i = this.trakeNumber - 1)
     {
       this.trakeNumber = i;
-      Log.d("epsbqfnkebbetwvklngx", "xicciqqnawufrlzlmeom");
       this.song = ((File)this.songList.get(this.trakeNumber));
-      Log.d("hvfznisyrorbmwnmhmgu", "lvlskybwsoosgabgbmef");
-      this.player = MediaPlayer.create(getApplicationContext(), sfk90j61f13471l17ew4evz3479e83kp20y9312cl67viln66537wz4340l28dz5g28(this.song));
-      Log.w("ipztdlawvoxcsfyexcbm", "iqlpwvwrkhmgfovcarmi");
-      Log.i("jtaplyxsadlztoensebq", "lbvomilyjoqdwtazldjy");
-      Log.e("nckkshoavneymqprerdi", "bcbpsnqhvsulnoludkjx");
-      Log.i("fmngefklmlwszpcszaxs", "vqeomcvzshjwhmmtliha");
+      this.player = MediaPlayer.create(getApplicationContext(), setSongAndGetItsURI(this.song));
       this.player.start();
       return;
     }
