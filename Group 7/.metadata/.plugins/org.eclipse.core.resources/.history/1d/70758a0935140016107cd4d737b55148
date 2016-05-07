@@ -1,0 +1,218 @@
+package com.example.owner.musicplayer;
+
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
+import android.widget.TextView;
+import java.io.File;
+import java.util.ArrayList;
+
+public class rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244
+  extends AppCompatActivity
+  implements SeekBar.OnSeekBarChangeListener, View.OnClickListener
+{
+  private ImageView bbh1429r57i20v1402492epz90511880n42lik327986w198uid54r42839712pf3889pt9767;
+  private ArrayList<File> songList;
+  private int songPosition;
+  private ServiceConnection frz326292984fpqzh450is1p3779zl15n389511c447472368233727no26m6139739c72i77 = new ServiceConnection()
+  {
+    public void onServiceConnected(ComponentName paramAnonymousComponentName, IBinder paramAnonymousIBinder)
+    {
+      paramAnonymousComponentName = (PlayerActivity.playerBinder)paramAnonymousIBinder;
+      rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.access$002(rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this, paramAnonymousComponentName.getThisPlayerActivity());
+      rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.access$202(rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this, true);
+      rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this.lbiqlh964v90u58mc5555s53666nrxiyki54j3281kit7g68215nxho32iypv57();
+    }
+    
+    public void onServiceDisconnected(ComponentName paramAnonymousComponentName)
+    {
+      rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.access$202(rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this, false);
+    }
+  };
+  private TextView songTitle;
+  private Button nextButton;
+  private Button playPauseButton;
+  private Button fastforwardButton;
+  private PlayerActivity playerActivity;
+  private boolean ols59225260a21392a5215371655p56ss29o703849808432fg74c21kp224164ma888641t72m8068 = false;
+  private Thread oun37633t31359anidm44cp828j6271xdth315370846y67u8326k34x14ui77240it59;
+  private SeekBar sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760;
+  private Button rewindButton;
+  private Button previousSongButton;
+  
+  
+  public void lbiqlh964v90u58mc5555s53666nrxiyki54j3281kit7g68215nxho32iypv57()
+  {
+    this.playerActivity.setPlayer();
+    this.songTitle.setText(this.playerActivity.getSong().getName().replace(".mp3", "").replace(".wav", ""));
+    vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(this.playerActivity.setSongAndGetItsURI(this.playerActivity.getSong()));
+    this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(this.playerActivity.getDuration());
+    this.oun37633t31359anidm44cp828j6271xdth315370846y67u8326k34x14ui77240it59.start();
+  }
+  
+  public void onClick(View paramView)
+  {
+    int i = paramView.getId();
+    switch (i)
+    {
+    default: 
+    case R.id.btPlay: 
+    case R.id.btFf: 
+    case R.id.btRw: 
+      do
+      {
+        do
+        {
+          return;
+          this.playPauseButton.setText(this.playerActivity.pauseOrUnpause());
+          return;
+        } while (!this.playerActivity.fastward5Seconds());
+        vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(this.playerActivity.setSongAndGetItsURI(this.playerActivity.getSong()));
+        this.songTitle.setText(this.playerActivity.getSong().getName().replace(".mp3", "").replace(".wav", ""));
+        this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(this.playerActivity.getDuration());
+        this.playPauseButton.setText("||");
+        return;
+      } while (!this.playerActivity.rewind5Seconds());
+      vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(this.playerActivity.setSongAndGetItsURI(this.playerActivity.getSong()));
+      this.songTitle.setText(this.playerActivity.getSong().getName().replace(".mp3", "").replace(".wav", ""));
+      this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(this.playerActivity.getDuration());
+      this.playPauseButton.setText("||");
+      return;
+    case R.id.btNext: 
+      this.playerActivity.nextSong();
+      vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(this.playerActivity.setSongAndGetItsURI(this.playerActivity.getSong()));
+      this.songTitle.setText(this.playerActivity.getSong().getName().replace(".mp3", "").replace(".wav", ""));
+      this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(this.playerActivity.getDuration());
+      this.playPauseButton.setText("||");
+      return;
+    }
+    this.playerActivity.skipToLastSong();
+    vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(this.playerActivity.setSongAndGetItsURI(this.playerActivity.getSong()));
+    this.songTitle.setText(this.playerActivity.getSong().getName().replace(".mp3", "").replace(".wav", ""));
+    this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(this.playerActivity.getDuration());
+    this.playPauseButton.setText("||");
+  }
+  
+  protected void onCreate(Bundle paramBundle)
+  {
+    super.onCreate(paramBundle);
+    Log.w("hcgnxrmduurlqvsdsirn", "ivmjfvrhybpmvsizcjfx");
+    Log.w("qlzabqnxzqsvouhbyucv", "lyclljobhareyglzwjrz");
+    setContentView(2130968602);
+    bindService(new Intent(this, PlayerActivity.class), this.frz326292984fpqzh450is1p3779zl15n389511c447472368233727no26m6139739c72i77, 1);
+    Log.e("aqjarlccjqtbuzqsginl", "dqeymmjpqjefvvdneozr");
+    Log.e("ozyjeldodgicjjhxrvjm", "rplcqjzrvicifkumemxo");
+    this.playPauseButton = ((Button)findViewById(R.id.btPlay));
+    Log.e("atbqwbnhxyilzaozlrom", "ctkwjylmtpttuxioxbwv");
+    this.fastforwardButton = ((Button)findViewById(R.id.btFf));
+    Log.e("azozefscpmejliajbpmy", "fvxzeeytuuqotvninkyv");
+    Log.w("hzhgqllzlbmproldpjlk", "gtokrpmmcbkvlvzoifbz");
+    this.rewindButton = ((Button)findViewById(R.id.btRw));
+    this.nextButton = ((Button)findViewById(R.id.btNext));
+    Log.i("cqbrtejqdzovfvivtbup", "ijqzqezzsndhbeofpora");
+    this.previousSongButton = ((Button)findViewById(R.id.btPrev));
+    this.songTitle = ((TextView)findViewById(2131492973));
+    Log.d("jpksqfpwthslyjstrlys", "njdmdppkzembcvqkyywr");
+    this.playPauseButton.setOnClickListener(this);
+    this.fastforwardButton.setOnClickListener(this);
+    Log.i("mejpjomfugbgtoguuhut", "hrrxpddgpwopezffdqws");
+    this.rewindButton.setOnClickListener(this);
+    Log.d("ctbvsklbxedkxzzcauqb", "dsehgocxkgpbrplqcyjg");
+    this.nextButton.setOnClickListener(this);
+    Log.e("rclqoewqjgzjchfmbaow", "nqvdhhmjvhmowpkhqvci");
+    this.previousSongButton.setOnClickListener(this);
+    Log.e("olxuetgngvsqjxxwyfkm", "egevdchgvgsalxvnburg");
+    this.bbh1429r57i20v1402492epz90511880n42lik327986w198uid54r42839712pf3889pt9767 = ((ImageView)findViewById(2131492972));
+    this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760 = ((SeekBar)findViewById(R.id.seekBar));
+    this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setOnSeekBarChangeListener(this);
+    this.oun37633t31359anidm44cp828j6271xdth315370846y67u8326k34x14ui77240it59 = new Thread()
+    {
+      public void run()
+      {
+        int k = rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this.playerActivity.getDuration();
+        int i = 0;
+        rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setMax(k);
+        while (i < k)
+        {
+          int j = i;
+          try
+          {
+            Thread.sleep(500L);
+            j = i;
+            i = rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this.playerActivity.getPosition();
+            j = i;
+            rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.this.sblje58riix55rdur3b542919l59129882x97xt71u7484rk44w9448a37iaz69v871760.setProgress(i);
+          }
+          catch (Exception localException)
+          {
+            localException.printStackTrace();
+            i = j;
+          }
+        }
+      }
+    };
+    Log.d("tirslhkbfxcdatqroymf", "ixqpxptkqzasuvbosxal");
+    paramBundle = getIntent().getExtras();
+    this.songList = paramBundle.getParcelableArrayList("songlist");
+    this.songPosition = paramBundle.getInt("pos", 0);
+  }
+  
+  public boolean onCreateOptionsMenu(Menu paramMenu)
+  {
+    getMenuInflater().inflate(2131558400, paramMenu);
+    Log.i("fzknvqwmiciqcbxhummq", "kptdxqzoccuqhawktezo");
+    Log.w("auqywnzaytttlvhdsdcu", "uermmxyutzvdwxrizwsd");
+    Log.w("zknfvvmnuezexuvdydke", "podacnuxnobzrmicddgo");
+    return true;
+  }
+  
+  public boolean onOptionsItemSelected(MenuItem paramMenuItem)
+  {
+    Log.e("cpuqwhdnzmxasigrfrkx", "edrhtgahjeriwqewyrka");
+    Log.e("aimlsdmvmxrjcotpfejk", "phtwabozvxsfaasfsqam");
+    int i = paramMenuItem.getItemId();
+    Log.v("aexrutolxyaaaaudxvmt", "tsfzebtmwgsrlhsbawoz");
+    if (i == 2131493007) {
+      return true;
+    }
+    return super.onOptionsItemSelected(paramMenuItem);
+  }
+  
+  public void onProgressChanged(SeekBar paramSeekBar, int paramInt, boolean paramBoolean) {}
+  
+  public void onStartTrackingTouch(SeekBar paramSeekBar) {}
+  
+  public void onStopTrackingTouch(SeekBar paramSeekBar)
+  {
+    Log.d("nflgcjbxyptxgudsgddg", "jfmxsisayezgeezwuqpj");
+    Log.w("shoefzsgkhclreaubcwe", "wxccxtvrcxhrqleqphnk");
+    Log.i("wtwxjkphpwmbuoakykdf", "pcjuzenpdwefwflomybj");
+    this.playerActivity.skeepToThisTime(paramSeekBar.getProgress());
+  }
+  
+  public void vsl33b844e17kpxsadp40on3iif41kmkd4160338638cwf3672ip6810f90161949n58(Uri paramUri)
+  {
+    Log.v("jzhilrmcjuiwhlqjidwr", "ketxfinmwzkywtjoxogl");
+    this.bbh1429r57i20v1402492epz90511880n42lik327986w198uid54r42839712pf3889pt9767.setImageBitmap(this.playerActivity.dhwxafp5426051t98dz47zpz4747025bn25uf93m56a1tqd033pxfhq18d62nl34(paramUri, null));
+  }
+}
+
+
+/* Location:              C:\Users\colin\Documents\GitHub\cchr158First\G7.jar!\com\example\owner\musicplayer\rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.class
+ * Java compiler version: 6 (50.0)
+ * JD-Core Version:       0.7.1
+ */

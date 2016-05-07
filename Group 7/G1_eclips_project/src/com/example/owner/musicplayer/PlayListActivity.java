@@ -24,7 +24,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
 	private ArrayAdapter<String> onScreenListOfSongs;
 	private Runnable displayListOnScreen;
 	private LinkedList<File> fileList;
-	private jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56zgt3 olaht97301llc9484596423b27h61n20vo2343to2179q17h84p091ir51lgir024s7069;
+	private Player playerActivity;
 	boolean connected = false;
 	private ListView lvPlaylist;
 	private Button playButton;
@@ -33,9 +33,9 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
 	private ServiceConnection frz326292984fpqzh450is1p3779zl15n389511c447472368233727no26m6139739c72i77 = new ServiceConnection() {
 		public void onServiceConnected(ComponentName paramAnonymousComponentName, IBinder paramAnonymousIBinder) {
 			// this is a binder.
-			paramAnonymousComponentName = (jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56zgt3.bkv3523rqvc154051z146pqz54l34q38ujcx6211au2959i6368gdes982958eze95952) paramAnonymousIBinder;
+			paramAnonymousComponentName = (Player.playerBinder) paramAnonymousIBinder;
 			PlayListActivity.access$202(PlayListActivity.this, paramAnonymousComponentName
-					.tux7178q246614s11y49y54876184m92z72m29rv018udvsf4134942i53441833oybd66l27());
+					.getThisPlayerActivity());
 			PlayListActivity.this.connected = true;
 		}
 
@@ -57,18 +57,18 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
 	public void onClick(View paramView) {
 		if (paramView.getId() == R.id.playButton) {
 			if (this.fileList.size() != 0) {
-				this.olaht97301llc9484596423b27h61n20vo2343to2179q17h84p091ir51lgir024s7069
-						.lmbkkudgil1e88881709775w7iymcr8375905328ej528188wteg1869wap91amt39();
+				this.playerActivity
+						.stopPlayer();
 				startActivity(new Intent(getApplicationContext(),
-						rai33v9dtd056s48gr12irbbx81qv64g53emphbz51f68yh98x2461pp81o94244.class).putExtra("pos", 0)
+						PlayerActivity.class).putExtra("pos", 0)
 								.putExtra("songlist", this.fileList));
 				return;
 			}
 			Toast.makeText(getApplicationContext(), "NO SONG IN THE PLAYLIST, CANNOT START PLAYING.", 0).show();
 			return;
 		}else if (this.fileList.size() != 0) {
-			this.olaht97301llc9484596423b27h61n20vo2343to2179q17h84p091ir51lgir024s7069
-					.rnh386yyz93dy69nyak30lrh73266695d5iguz76tz0eer9255q71wc2786jhw38();
+			this.playerActivity
+					.stopSong();
 			this.fileList.clear();
 			this.songNames = getSongNamesFromFiles(this.fileList);
 			this.onScreenListOfSongs = new ArrayAdapter(getApplicationContext(), R.layout.song_layout, R.id.textView,
@@ -82,7 +82,7 @@ public class PlayListActivity extends AppCompatActivity implements View.OnClickL
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
 		setContentView(R.layout.activity_playlist);
-		bindService(new Intent(this, jsr438w4171f7096744c329292z606416yy178033s399lhd2226fgs37mfu97em56zgt3.class),
+		bindService(new Intent(this, Player.class),
 				this.frz326292984fpqzh450is1p3779zl15n389511c447472368233727no26m6139739c72i77, 1);
 		this.playButton = ((Button) findViewById(R.id.playButton));
 		this.clearButton = ((Button) findViewById(R.id.clearButton));

@@ -2,22 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getSong" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="R.id.songName" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="getSong"/>
+			<item value="2131492973"/>
+			<item value="2131493007"/>
+			<item value="2131492972"/>
+			<item value="ols59225260a21392a5215371655p56ss29o703849808432fg74c21kp224164ma888641t72m8068"/>
+			<item value="2130968602"/>
+			<item value="2131492979"/>
+			<item value="2131492974"/>
+			<item value="2131492976"/>
 		</list>
 		<list key="replacehistory">
+			<item value="R.id.songName"/>
+			<item value="R.id.action_settings"/>
+			<item value="R.id.albumView"/>
+			<item value="R.layout.activity_player"/>
+			<item value="R.id.btPrev"/>
+			<item value="R.id.seekBar"/>
+			<item value="R.id.btRw"/>
+			<item value="R.id.btFf"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="380" key="DIALOG_HEIGHT"/>
-		<item value="840" key="DIALOG_X_ORIGIN"/>
-		<item value="275" key="DIALOG_Y_ORIGIN"/>
+		<item value="374" key="DIALOG_HEIGHT"/>
+		<item value="1512" key="DIALOG_X_ORIGIN"/>
+		<item value="246" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
