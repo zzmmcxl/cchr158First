@@ -2,37 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="R.id.songName" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="true" key="wholeword"/>
+		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="2131492973"/>
+			<item value="access"/>
+			<item value="2131558400"/>
 			<item value="2131493007"/>
-			<item value="2131492972"/>
-			<item value="ols59225260a21392a5215371655p56ss29o703849808432fg74c21kp224164ma888641t72m8068"/>
-			<item value="2130968602"/>
 			<item value="2131492979"/>
-			<item value="2131492974"/>
+			<item value="2131492978"/>
+			<item value="2131492977"/>
 			<item value="2131492976"/>
+			<item value="2131492980"/>
 		</list>
 		<list key="replacehistory">
-			<item value="R.id.songName"/>
-			<item value="R.id.action_settings"/>
-			<item value="R.id.albumView"/>
-			<item value="R.layout.activity_player"/>
+			<item value="R.menu.action_settings"/>
+			<item value="R.menu.menu_main"/>
 			<item value="R.id.btPrev"/>
-			<item value="R.id.seekBar"/>
-			<item value="R.id.btRw"/>
-			<item value="R.id.btFf"/>
+			<item value="songNames"/>
+			<item value="onScreenListOfSongs"/>
+			<item value="R.id.textView"/>
+			<item value="R.layout.song_layout"/>
+			<item value="PlayListActivity"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="374" key="DIALOG_HEIGHT"/>
-		<item value="1512" key="DIALOG_X_ORIGIN"/>
-		<item value="246" key="DIALOG_Y_ORIGIN"/>
+		<item value="1404" key="DIALOG_X_ORIGIN"/>
+		<item value="171" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
