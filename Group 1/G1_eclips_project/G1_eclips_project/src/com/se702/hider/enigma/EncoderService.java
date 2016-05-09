@@ -109,12 +109,12 @@ public class EncoderService extends IntentService {
 		if (intent.getStringExtra("imageURI") != null) {
 			this.$388 = Uri.parse(intent.getStringExtra("imageURI"));
 			try {
-	            this.$304 = MediaStore$Images$Media.getBitmap(this.getContentResolver(), this.$388);
+	            this.$304 = MediaStore.Images.Media.getBitmap(this.getContentResolver(), this.$388);
 	        }
 	        catch (Exception ex) {}
         }
 		if (this.$304 != null) {
-			this.$0 = this.$304.copy(Bitmap$Config.ARGB_8888, true);
+			this.$0 = this.$304.copy(Bitmap.Config.ARGB_8888, true);
 			this.$50 = intent.getStringExtra("message");
 			if (this.$50.equals("") || this.$50.equals(null)) {
 				this.$50 = "Enter a message in !!!!";
