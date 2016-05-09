@@ -25,17 +25,10 @@ public class MainActivity extends AppCompatActivity
     
     public MainActivity() {
         super();
-        BReceiver = new BroadcastReceiver() {
-//            final /*synthetic*/ MainActivity this$0;
-//            
-//            MainActivity$1() {
-//                this$0 = this$0;
-//                super();
-//            }
-            
+        BReceiver = new BroadcastReceiver() {            
             public void onReceive(final Context context, final Intent intent) {
-                ((EditText)this$0.findViewById(R.id.editText)).setText((CharSequence)intent.getExtras().getString("output"));
-                ((ImageView)this$0.findViewById(R.id.imageDisplay)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
+                ((EditText)MainActivity.this.findViewById(R.id.editText)).setText((CharSequence)intent.getExtras().getString("output"));
+                ((ImageView)MainActivity.this.findViewById(R.id.imageDisplay)).setImageURI(Uri.parse(intent.getStringExtra("imageURI")));
             }
         };
     }
@@ -71,18 +64,11 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(final Bundle bundle) {
         super.onCreate(bundle);
         this.setContentView(R.layout.splash);
-        new Handler().postDelayed((Runnable)new Runnable() {
-//            final /* synthetic */ MainActivity this$0;
-//            
-//            MainActivity$2() {
-//                this$0 = this$0;
-//                super();
-//            }
-            
+        new Handler().postDelayed((Runnable)new Runnable() {            
             @Override
             public void run() {
-                this$0.setContentView(R.layout.activity_my);
-                this$0.setSupportActionBar((Toolbar)this$0.findViewById(R.id.toolbar));
+                MainActivity.this.setContentView(R.layout.activity_my);
+                MainActivity.this.setSupportActionBar((Toolbar)MainActivity.this.findViewById(R.id.toolbar));
             }
         }, (long)5000);
     }

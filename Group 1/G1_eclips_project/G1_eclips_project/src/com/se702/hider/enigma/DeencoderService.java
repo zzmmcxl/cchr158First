@@ -77,12 +77,12 @@ public class DeencoderService extends IntentService {
         if (intent.getStringExtra("imageURI") != null) {
             this.$465 = Uri.parse(intent.getStringExtra("imageURI"));
             try {
-                this.$18 = MediaStore$Images$Media.getBitmap(this.getContentResolver(), this.$465);
+                this.$18 = MediaStore.Images.Media.getBitmap(this.getContentResolver(), this.$465);
             } catch (Exception ex) {
             }
         }
         if (this.$18 != null) {
-            this.$84 = this.$18.copy(Bitmap$Config.ARGB_8888, true);
+            this.$84 = this.$18.copy(Bitmap.Config.ARGB_8888, true);
             this.$11 = this.getHiddenText(this.$84);
             this.sendBroadcast(this.$11, this.$465.toString());
         }

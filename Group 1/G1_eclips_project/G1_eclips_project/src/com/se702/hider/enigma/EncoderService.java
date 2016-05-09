@@ -77,7 +77,7 @@ public class EncoderService extends IntentService {
 			if (this.$496 == this.$510.length()) {
 				this.$510 = this.getBitsForPos(s, this.$279);
 				this.$496 = 0;
-				$910.$1(this, bitmap, s);
+				this.$279++;
 			}
 			this.$481 = Integer.parseInt(this.$510.substring(this.$496, 1 + this.$496));
 			++this.$496;
