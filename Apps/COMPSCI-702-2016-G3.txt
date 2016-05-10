@@ -1,0 +1,3 @@
+Input is the user's GPS location and a desired destination, additionally settings can be viewed as configurable inputs.
+Output is an alert via vibration in relation to the user inputs.
+The purpose of our app is to allow a user to fall asleep while using public transport (or self driving cars), and then be woken up when they get close to their destination.

@@ -1,0 +1,4 @@
+This app creates a Pairing between hospitals and medical students.
+1. Press the button (bottom right) to add hospitals and their preference list. Preference lists must be separated by commas e.g. alex, john, bob,..., george
+2. Press the button (bottom right) to add students. Enter details in the same way as for hospitals. Make sure that student names are contained in at least one hospital preference list and the students preference lists are made of hospitals that you have entered.
+3. Press the button (bottom right) to calculate the results. If results don’t display initially then scroll to refresh the GUI.

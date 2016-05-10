@@ -1,0 +1,14 @@
+App Description:
+
+Our app is called WhoTouchMyPhone which can detect whether someone has touched your
+smart phone when you are leaving.
+
+1. Open WhoTouchMyPhone app and keep opening 30 seconds.
+
+2. Then put your Android phone on the desk and leave.
+
+3. Someone else takes your phone from the desk (and shake the phone) 
+    when you are leaving.
+
+4. After you come back and open the phone, the app will tell you whether 
+    someone has touched your phone during this period.

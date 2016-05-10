@@ -1,0 +1,13 @@
+COMPSCI 702 2016 G8 Android Application
+
+This app displays information about lab rooms at the University of Auckland.
+
+In particular it displays the opening hours, booking times, current room usage, and current usage of the computers
+in the rooms.
+
+The app has four main input buttons:
+	# Load - output = opening hours of lab rooms
+	# Booking - output = booking time of lab rooms
+	# Machine - output = information about computers in the room (e.g. IP, if available, position)
+	# Usage - output = when the room will be in use and available computers
+	

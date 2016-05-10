@@ -1,0 +1,12 @@
+Enigma is an stegonography application for encoding secret messages into images.
+
+The user enters the secret string message into the first text field, and then can
+choose a picture to encode it into by hitting the "Pick image to encode" button.
+
+After the user picks a picture, the application will encode the string into the 
+pixels of the picture using a basic stegonography algorithm. After that is done,
+the application will save the picture to the phones external storage.
+
+The user can also decode messages from images by clicking on the "Decode" button 
+and selecting a picture. The application will then decode the string from the 
+picture and display it on the screen along with the selected picture.

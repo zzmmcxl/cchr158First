@@ -1,0 +1,12 @@
+Our app, Tasker, is a to-do app with geofencing capabilities. A user creates tasks and sets a specific location for each task, and when they enter a location where they have tasks in, our app will send a push notification to the user complete those tasks. Completing 3 tasks in a day also sets off an achievement badge in the form of a push notification. To complete or delete tasks, hold down on the task. 
+
+An example use case is as follows:
+A University student could add tasks such as "Buy books at the University Bookstore" or "See lecturer at Engineering building", and attach the location as the University of Auckland. When they reach the University, the app would send them a push notification reminding them to buy books and see the lecturer. 
+
+EXTRA NOTES:
+
+- Please ensure that your phone's location is TURNED ON. Otherwise the location detection will not work.
+
+- There is a known issue where the location detection seems to take longer with each added task. (e.g. Detection is nearly instantaneous with first task, detection is around 10 -15 secs with a second task added.)
+
+One workaround for this is to re-install the application from the apk file again.

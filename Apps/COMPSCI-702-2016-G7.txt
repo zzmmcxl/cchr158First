@@ -1,0 +1,7 @@
+We have implemented a simple application which supports playback of selected music files. The app intially imports and displays a list of all the music files that exist on the users phone.
+The user can then select certain songs they want to listen to by tapping them from the list, which will then be added to the user's custom playlist. 
+The user can then playback the selected songs from the playlist screen by tapping "Play the List" (or delete them by tapping "Clear the List").
+
+
+Input: Music files from user's phone, user input
+Output: Music playback

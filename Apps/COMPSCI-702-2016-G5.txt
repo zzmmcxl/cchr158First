@@ -1,0 +1,4 @@
+App is a check in app.
+Go to the check in tab and click the 702 class.
+Depending on day of the week, location and time, a toast will appear informing you of your attempted check in.
+There may be some other functionalities.. :)
