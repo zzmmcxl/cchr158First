@@ -22,7 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
-import com.woop.tryreverseengineerthis.C0594F.C0593G;
+import com.woop.tryreverseengineerthis.CourseList.courses;
 import com.woop.tryreverseengineerthis.C0926A.C0590B;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
@@ -70,21 +70,21 @@ public class C1126O extends AppCompatActivity implements OnNavigationItemSelecte
     protected void onCreate(Bundle o1o1o1o1o1) {
         super.onCreate(o1o1o1o1o1);
         C0597J.L1L1L1L1L1L1L1L1 = getApplicationContext();
-        setContentView((int) C0604R.layout.activity_landing);
-        Toolbar l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1 = (Toolbar) findViewById(C0604R.id.mainTB);
+        setContentView((int) R.layout.activity_landing);
+        Toolbar l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1 = (Toolbar) findViewById(R.id.mainTB);
         setSupportActionBar(l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1);
         try {
             C0596I.m21xde12b279(getApplicationContext());
         } catch (NoSuchPaddingException e) {
         } catch (NoSuchAlgorithmException e2) {
         }
-        ((FloatingActionButton) findViewById(C0604R.id.fab)).setOnClickListener(new C06011());
+        ((FloatingActionButton) findViewById(R.id.fab)).setOnClickListener(new C06011());
         startService(new Intent(this, C0600N.class));
-        DrawerLayout l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = (DrawerLayout) findViewById(C0604R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l, l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1, C0604R.string.navigation_drawer_open, C0604R.string.navigation_drawer_close);
+        DrawerLayout l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l, l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l.setDrawerListener(toggle);
         toggle.syncState();
-        ((NavigationView) findViewById(C0604R.id.nav_view)).setNavigationItemSelectedListener(this);
+        ((NavigationView) findViewById(R.id.nav_view)).setNavigationItemSelectedListener(this);
         LocationManager l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = (LocationManager) getSystemService("location");
         boolean l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = false;
         boolean l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1 = false;
@@ -125,7 +125,7 @@ public class C1126O extends AppCompatActivity implements OnNavigationItemSelecte
     }
 
     public void onBackPressed() {
-        DrawerLayout l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = (DrawerLayout) findViewById(C0604R.id.drawer_layout);
+        DrawerLayout l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l.isDrawerOpen((int) MediaRouterJellybean.ALL_ROUTE_TYPES)) {
             l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l1l.closeDrawer((int) MediaRouterJellybean.ALL_ROUTE_TYPES);
         } else {
@@ -134,12 +134,12 @@ public class C1126O extends AppCompatActivity implements OnNavigationItemSelecte
     }
 
     public boolean onCreateOptionsMenu(Menu o1o1o1o1o1o1o1o1) {
-        getMenuInflater().inflate(C0604R.menu.landing, o1o1o1o1o1o1o1o1);
+        getMenuInflater().inflate(R.menu.landing, o1o1o1o1o1o1o1o1);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem o1o1o1o1o1o1o1o1o) {
-        if (o1o1o1o1o1o1o1o1o.getItemId() == C0604R.id.action_settings) {
+        if (o1o1o1o1o1o1o1o1o.getItemId() == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(o1o1o1o1o1o1o1o1o);
@@ -149,25 +149,25 @@ public class C1126O extends AppCompatActivity implements OnNavigationItemSelecte
         int O1O1 = o1o1o1o1o1o1o1o1o.getItemId();
         FragmentManager O1O1O1 = getSupportFragmentManager();
         Fragment O1O1O1O = null;
-        if (O1O1 == C0604R.id.nav_classes) {
+        if (O1O1 == R.id.nav_classes) {
             O1O1O1O = new Fragment();
-        } else if (O1O1 == C0604R.id.nav_assignments) {
+        } else if (O1O1 == R.id.nav_assignments) {
             O1O1O1O = new Fragment();
-        } else if (O1O1 == C0604R.id.nav_checkin) {
+        } else if (O1O1 == R.id.nav_checkin) {
             O1O1O1O = new C0926A();
-        } else if (O1O1 == C0604R.id.nav_lectures) {
+        } else if (O1O1 == R.id.nav_lectures) {
             O1O1O1O = new Fragment();
-        } else if (O1O1 == C0604R.id.nav_share) {
+        } else if (O1O1 == R.id.nav_share) {
             O1O1O1O = new Fragment();
-        } else if (O1O1 == C0604R.id.nav_send) {
+        } else if (O1O1 == R.id.nav_send) {
             O1O1O1O = new Fragment();
         }
-        O1O1O1.beginTransaction().replace(C0604R.id.main_fragment_container, O1O1O1O).commit();
-        ((DrawerLayout) findViewById(C0604R.id.drawer_layout)).closeDrawer((int) MediaRouterJellybean.ALL_ROUTE_TYPES);
+        O1O1O1.beginTransaction().replace(R.id.main_fragment_container, O1O1O1O).commit();
+        ((DrawerLayout) findViewById(R.id.drawer_layout)).closeDrawer((int) MediaRouterJellybean.ALL_ROUTE_TYPES);
         return true;
     }
 
-    public void onListFragmentInteraction(C0593G o1o1o1o1o1o1o1o1o) {
+    public void onListFragmentInteraction(courses o1o1o1o1o1o1o1o1o) {
         Log.d("NothingToSeeHere", "Downloading ram...");
         String O1O1O1O1O1O1O1O = o1o1o1o1o1o1o1o1o.f7x78affa3e;
         String O1O1O1O1O1O1O1O1O = "dj20jd02j0d2j0d2jd0";

@@ -1,0 +1,80 @@
+package com.woop.tryreverseengineerthis;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/* renamed from: com.woop.tryreverseengineerthis.F */
+public class C0594F {
+	public static final List<C0593G> f10xc5e2fe2a = new ArrayList();
+	public static final Map<String, C0593G> f11xf67cc762 = new HashMap();
+	private static final int f12xd91c250f = 4;
+	String f13x6138dee7;
+
+	/* renamed from: com.woop.tryreverseengineerthis.F.G */
+	public static class C0593G {
+		public final String f6xb9921053;
+		public final String f7x78affa3e;
+		public final int f8x9d4f4dce;
+		public final String f9xc9a6c23;
+
+		public C0593G(String s1, String s2, String s3, int i) {
+			this.f6xb9921053 = s1;
+			this.f7x78affa3e = s2;
+			this.f9xc9a6c23 = s3;
+			this.f8x9d4f4dce = i;
+		}
+
+//		private static boolean L1L1L1L1L1L1L1(String str) {
+//			if (str.length() == 16) {
+//				return true;
+//			}
+//			return false;
+//		}
+
+//		private static boolean L1L1L1L1L1L1L1(int i) {
+//			if ((((double) i) / 2.0d) % 2.0d != 1.0d) {
+//				return true;
+//			}
+//			return false;
+//		}
+
+		public String toString() {
+			return this.f7x78affa3e;
+		}
+	}
+
+	public C0594F() {
+		this.f13x6138dee7 = "-1834179405";
+	}
+//
+//	static {
+//		f10xc5e2fe2a = new ArrayList();
+//		f11xf67cc762 = new HashMap();
+//		C0594F.m15x86b31889();
+//	}
+
+	private static void m15x86b31889() {
+		C0593G L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L = new C0593G("1", "COMPSCI 702",
+				BuildConfig.FLAVOR, R.drawable.android_security);
+		f10xc5e2fe2a.add(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		f11xf67cc762.put(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L.f6xb9921053,
+				L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L = new C0593G("2", "SOFTENG 700",
+				BuildConfig.FLAVOR, R.drawable.research);
+		f10xc5e2fe2a.add(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		f11xf67cc762.put(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L.f6xb9921053,
+				L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L = new C0593G("3", "SOFTENG 750",
+				BuildConfig.FLAVOR, R.drawable.software_development_methodology);
+		f10xc5e2fe2a.add(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		f11xf67cc762.put(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L.f6xb9921053,
+				L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L = new C0593G("4", "SOFTENG 751",
+				BuildConfig.FLAVOR, R.drawable.datacentre);
+		f10xc5e2fe2a.add(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+		f11xf67cc762.put(L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L.f6xb9921053,
+				L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L1L);
+	}
+}

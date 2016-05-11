@@ -1,0 +1,72 @@
+package com.woop.tryreverseengineerthis;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+/* renamed from: com.woop.tryreverseengineerthis.F */
+public class C0594F {
+	public static final List<courses> courseList = new ArrayList();
+//	public static final Map<String, courses> mapIndexToCourse = new HashMap();
+	private static final int numberOfCourse = 4;
+	String f13x6138dee7;
+
+	/* renamed from: com.woop.tryreverseengineerthis.F.G */
+	public static class courses {
+		public final String index;
+		public final String courseName;
+		public final int imageID;
+		public final String emptyString;
+
+		public courses(String index, String courseName, String emptyString, int imageID) {
+			this.index = index;
+			this.courseName = courseName;
+			this.emptyString = emptyString;
+			this.imageID = imageID;
+		}
+
+		// private static boolean L1L1L1L1L1L1L1(String str) {
+		// if (str.length() == 16) {
+		// return true;
+		// }
+		// return false;
+		// }
+
+		// private static boolean L1L1L1L1L1L1L1(int i) {
+		// if ((((double) i) / 2.0d) % 2.0d != 1.0d) {
+		// return true;
+		// }
+		// return false;
+		// }
+
+		public String toString() {
+			return this.courseName;
+		}
+	}
+
+	public C0594F() {
+		this.f13x6138dee7 = "-1834179405";
+	}
+	//
+	 static {
+//	 f10xc5e2fe2a = new ArrayList();
+//	 f11xf67cc762 = new HashMap();
+	 CourseList.m15x86b31889();
+	 }
+
+	private static void m15x86b31889() {
+		courses temp = new courses("1", "COMPSCI 702", BuildConfig.FLAVOR, R.drawable.android_security);
+		courseList.add(temp);
+//		mapIndexToCourse.put(temp.index, temp);
+		temp = new courses("2", "SOFTENG 700", BuildConfig.FLAVOR, R.drawable.research);
+		courseList.add(temp);
+//		mapIndexToCourse.put(temp.index, temp);
+		temp = new courses("3", "SOFTENG 750", BuildConfig.FLAVOR, R.drawable.software_development_methodology);
+		courseList.add(temp);
+//		mapIndexToCourse.put(temp.index, temp);
+		temp = new courses("4", "SOFTENG 751", BuildConfig.FLAVOR, R.drawable.datacentre);
+		courseList.add(temp);
+//		mapIndexToCourse.put(temp.index, temp);
+	}
+}

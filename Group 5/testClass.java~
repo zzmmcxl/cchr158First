@@ -1,0 +1,18 @@
+public class test{
+  static int a;
+  static int b;
+  static {
+    a=3;
+    b=5;
+  }
+  public static void main(String[] args){
+    test t = new test();
+    System.out.println(t.a+" "+t.b);
+    //new otherTest();
+  }
+  class otherTest{
+    otherTest(){
+      System.out.println("works");
+    }
+  }
+}

@@ -28,12 +28,12 @@ public class C0592E implements Runnable {
 		this.L1L.start();
 	}
 
-	private static boolean L1L1L1L1L1L1L1(int O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O) {
-		if ((((double) O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O) / 2.0d) % 2.0d != 1.0d) {
-			return true;
-		}
-		return false;
-	}
+//	private static boolean L1L1L1L1L1L1L1(int O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O) {
+//		if ((((double) O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O1O) / 2.0d) % 2.0d != 1.0d) {
+//			return true;
+//		}
+//		return false;
+//	}
 
 	public void run() {
 		while (true) {
