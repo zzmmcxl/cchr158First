@@ -26,11 +26,11 @@ public class CourseList {
 			this.imageID = imageID;
 		}
 
-		// private static boolean L1L1L1L1L1L1L1(String str) {
-		// if (str.length() == 16) {
-		// return true;
-		// }
-		// return false;
+//		private static boolean L1L1L1L1L1L1L1(String str) {
+//		 if (str.length() == 16) {
+//		 return true;
+//		 }
+//		 return false;
 		// }
 
 		// private static boolean L1L1L1L1L1L1L1(int i) {
