@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:theme="@style/ThemeOverlay_AppCompat_Dark" android:gravity="50" android:orientation="1" android:background="@drawable/side_nav_bar" android:paddingLeft="@dimen/activity_horizontal_margin" android:paddingTop="@dimen/activity_vertical_margin" android:paddingRight="@dimen/activity_horizontal_margin" android:paddingBottom="@dimen/activity_vertical_margin" android:layout_width="-1" android:layout_height="@dimen/nav_header_height">
+    <ImageView android:id="@id/imageView" android:paddingTop="@dimen/nav_header_vertical_spacing" android:layout_width="-2" android:layout_height="-2" android:src="@mipmap/ic_logo" />
+    <TextView android:textAppearance="@style/TextAppearance_AppCompat_Body1" android:paddingTop="@dimen/nav_header_vertical_spacing" android:layout_width="-1" android:layout_height="-2" android:text="The University of Auckland" />
+    <TextView android:id="@id/textView" android:layout_width="-2" android:layout_height="-2" android:text="" />
+</LinearLayout>

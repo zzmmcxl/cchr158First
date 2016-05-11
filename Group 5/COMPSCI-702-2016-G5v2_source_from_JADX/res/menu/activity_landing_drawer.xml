@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu>
+    <group android:checkableBehavior="2">
+        <item android:icon="@drawable/ic_menu_camera" android:id="@id/nav_classes" android:title="Classes" />
+        <item android:icon="@drawable/ic_menu_gallery" android:id="@id/nav_lectures" android:title="Lecturers" />
+        <item android:icon="@drawable/ic_menu_slideshow" android:id="@id/nav_assignments" android:title="Assignments" />
+        <item android:icon="@drawable/ic_menu_manage" android:id="@id/nav_checkin" android:title="Check In" />
+    </group>
+    <item android:title="Communicate">
+        <menu>
+            <item android:icon="@drawable/ic_menu_share" android:id="@id/nav_share" android:title="Share" />
+            <item android:icon="@drawable/ic_menu_send" android:id="@id/nav_send" android:title="Send" />
+        </menu> />
+</menu>

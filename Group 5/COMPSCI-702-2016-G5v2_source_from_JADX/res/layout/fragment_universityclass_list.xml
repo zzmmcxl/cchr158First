@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.RecyclerView app:name="com.woop.tryreverseengineerthis.UniversityClassFragment" app:id="@id/list" app:layout_width="-1" app:layout_height="-1" />

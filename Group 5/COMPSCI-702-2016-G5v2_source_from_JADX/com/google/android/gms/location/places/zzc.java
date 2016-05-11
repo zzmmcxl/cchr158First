@@ -1,0 +1,59 @@
+package com.google.android.gms.location.places;
+
+import android.os.Parcel;
+import android.os.Parcelable.Creator;
+import com.google.android.gms.common.internal.safeparcel.zza;
+import com.google.android.gms.common.internal.safeparcel.zzb;
+import com.google.android.gms.drive.events.CompletionEvent;
+import com.google.android.gms.location.GeofenceStatusCodes;
+import java.util.List;
+
+public class zzc implements Creator<AutocompleteFilter> {
+    static void zza(AutocompleteFilter autocompleteFilter, Parcel parcel, int i) {
+        int zzav = zzb.zzav(parcel);
+        zzb.zza(parcel, 1, autocompleteFilter.zzaPg);
+        zzb.zzc(parcel, GeofenceStatusCodes.GEOFENCE_NOT_AVAILABLE, autocompleteFilter.mVersionCode);
+        zzb.zza(parcel, 2, autocompleteFilter.zzaPh, false);
+        zzb.zzI(parcel, zzav);
+    }
+
+    public /* synthetic */ Object createFromParcel(Parcel parcel) {
+        return zzfb(parcel);
+    }
+
+    public /* synthetic */ Object[] newArray(int i) {
+        return zzhL(i);
+    }
+
+    public AutocompleteFilter zzfb(Parcel parcel) {
+        boolean z = false;
+        int zzau = zza.zzau(parcel);
+        List list = null;
+        int i = 0;
+        while (parcel.dataPosition() < zzau) {
+            int zzat = zza.zzat(parcel);
+            switch (zza.zzca(zzat)) {
+                case CompletionEvent.STATUS_FAILURE /*1*/:
+                    z = zza.zzc(parcel, zzat);
+                    break;
+                case CompletionEvent.STATUS_CONFLICT /*2*/:
+                    list = zza.zzC(parcel, zzat);
+                    break;
+                case GeofenceStatusCodes.GEOFENCE_NOT_AVAILABLE /*1000*/:
+                    i = zza.zzg(parcel, zzat);
+                    break;
+                default:
+                    zza.zzb(parcel, zzat);
+                    break;
+            }
+        }
+        if (parcel.dataPosition() == zzau) {
+            return new AutocompleteFilter(i, z, list);
+        }
+        throw new zza.zza("Overread allowed size end=" + zzau, parcel);
+    }
+
+    public AutocompleteFilter[] zzhL(int i) {
+        return new AutocompleteFilter[i];
+    }
+}
