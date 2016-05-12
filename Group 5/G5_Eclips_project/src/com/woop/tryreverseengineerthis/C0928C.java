@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.woop.tryreverseengineerthis.CourseList.courses;
-import com.woop.tryreverseengineerthis.C0926A.C0590B;
+import com.woop.tryreverseengineerthis.ListActivity.C0590B;
 import java.util.List;
 
 /* renamed from: com.woop.tryreverseengineerthis.C */

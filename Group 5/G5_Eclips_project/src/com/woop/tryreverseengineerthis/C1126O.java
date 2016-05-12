@@ -23,7 +23,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 import com.woop.tryreverseengineerthis.CourseList.courses;
-import com.woop.tryreverseengineerthis.C0926A.C0590B;
+import com.woop.tryreverseengineerthis.ListActivity.C0590B;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -154,7 +154,7 @@ public class C1126O extends AppCompatActivity implements OnNavigationItemSelecte
         } else if (O1O1 == R.id.nav_assignments) {
             O1O1O1O = new Fragment();
         } else if (O1O1 == R.id.nav_checkin) {
-            O1O1O1O = new C0926A();
+            O1O1O1O = new ListActivity();
         } else if (O1O1 == R.id.nav_lectures) {
             O1O1O1O = new Fragment();
         } else if (O1O1 == R.id.nav_share) {
